@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -100,6 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -117,8 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
-  <li><a href="#machine-learning-simplified" id="toc-machine-learning-simplified" class="nav-link" data-scroll-target="#machine-learning-simplified">Machine Learning Simplified</a></li>
+  <li><a href="#machine-learning-simplified" id="toc-machine-learning-simplified" class="nav-link active" data-scroll-target="#machine-learning-simplified">Machine Learning Simplified</a></li>
   <li><a href="#key-concepts-and-terms" id="toc-key-concepts-and-terms" class="nav-link" data-scroll-target="#key-concepts-and-terms">Key Concepts and Terms</a>
   <ul class="collapse">
   <li><a href="#ridge-regression" id="toc-ridge-regression" class="nav-link" data-scroll-target="#ridge-regression">1. Ridge Regression</a></li>
@@ -169,33 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="outline" class="level1">
-<h1>Outline</h1>
-<ol type="1">
-<li><strong>Machine Learning Simplified</strong>
-<ul>
-<li>Why machine learning jargon feels complex.</li>
-<li>The importance of understanding these terms for beginners.</li>
-</ul></li>
-<li><strong>Explaining Machine Learning Jargon</strong>
-<ul>
-<li>Key terms explained in simple language:</li>
-<li>Ridge Regression</li>
-<li>Dummy Regressor</li>
-<li>StandardScaler</li>
-<li>Grid Search</li>
-<li>Cross-Validation</li>
-<li>Mean Square Error (MSE)</li>
-<li>Root Mean Square Error (RMSE)</li>
-<li>Mean Absolute Error (MAE)</li>
-</ul></li>
-<li><strong>Conclusion</strong>
-<ul>
-<li>Recap key points and encourage further exploration.</li>
-</ul></li>
-</ol>
-<hr>
-</section>
 <section id="machine-learning-simplified" class="level1">
 <h1>Machine Learning Simplified</h1>
 <p>Learning machine learning can feel like learning a new language. Words like “Ridge Regression” or “Cross-Validation” can be intimidating. But the good news? These concepts are simpler than they sound!</p>
@@ -261,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-1-load-and-preprocess-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-load-and-preprocess-the-data">Step 1: Load and Preprocess the Data</h2>
 <p>We load the dataset, split it into training and testing sets, and scale the features to ensure that all numerical variables (like age and study time) are on the same range.</p>
-<div id="b854db35" class="cell" data-execution_count="1">
+<div id="58cc849e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -288,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-2-baseline-model-with-dummy-regressor" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-baseline-model-with-dummy-regressor">Step 2: Baseline Model with Dummy Regressor</h2>
 <p>We begin by training a Dummy Regressor, which predicts the mean of the target variable for all samples. This serves as a baseline to evaluate whether our Ridge Regression model improves prediction accuracy.</p>
-<div id="877ac897" class="cell" data-execution_count="2">
+<div id="25d27f90" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyRegressor</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -308,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-3-train-a-ridge-regression-model" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-train-a-ridge-regression-model">Step 3: Train a Ridge Regression Model</h2>
 <p>Next, we train a Ridge Regression model and tune its hyperparameter, alpha using GridSearchCV. This ensures the model generalizes well to unseen data by evaluating multiple hyperparameter values through cross-validation.</p>
-<div id="ccd94c70" class="cell" data-execution_count="3">
+<div id="57bb87ab" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -331,6 +306,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Best Alpha from Grid Search: 10</code></pre>
 </div>
 </div>
+<p>When we visualize the coefficients of the Ridge Regression model, we how how each feature impacts the predicted grades in the Ridge Regression model. <code>studytime</code> has a positive impact, meaning more study time leads to better grades, while <code>failures</code> have the strongest negative effect, significantly lowering grades as past failures increase. <code>age</code> has a small negative influence, suggesting older students may slightly underperform compared to younger ones.</p>
+<div id="299e2880" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="49">
+
+<style>
+  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed details,
+  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-c525424e07554983b96aa359cdba0f41"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-c525424e07554983b96aa359cdba0f41") {
+      outputDiv = document.getElementById("altair-viz-c525424e07554983b96aa359cdba0f41");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-5f5ee14582349b9de0f909a4cf985ee5"}, "mark": {"type": "bar", "color": "skyblue"}, "encoding": {"x": {"field": "Feature", "sort": "-y", "title": "Features", "type": "nominal"}, "y": {"field": "Coefficient", "title": "Coefficient Value", "type": "quantitative"}}, "height": 400, "title": "Ridge Regression Coefficients", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-5f5ee14582349b9de0f909a4cf985ee5": [{"Feature": "age", "Coefficient": -0.5450128248297005}, {"Feature": "studytime", "Coefficient": 0.26487023512054325}, {"Feature": "failures", "Coefficient": -1.6472622043338105}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
 </section>
 <section id="step-4-evaluate-ridge-regression-performance" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-evaluate-ridge-regression-performance">Step 4: Evaluate Ridge Regression Performance</h2>
@@ -340,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Root Mean Squared Error (RMSE)</strong>: On average, the model’s predictions are off by about 4.72 grade points.</p></li>
 <li><p><strong>Mean Absolute Error (MAE)</strong>: On average, the model’s predictions are off by 3.50 grade points, without emphasizing larger errors as much as MSE or RMSE.</p></li>
 </ul>
-<div id="aed087ef" class="cell" data-execution_count="4">
+<div id="5f90fe77" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_absolute_error</span>
