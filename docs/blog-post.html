@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-1-load-and-preprocess-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-load-and-preprocess-the-data">Step 1: Load and Preprocess the Data</h2>
 <p>We load the dataset, split it into training and testing sets, and scale the features to ensure that all numerical variables (like age and study time) are on the same range.</p>
-<div id="58cc849e" class="cell" data-execution_count="1">
+<div id="03822bb9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-2-baseline-model-with-dummy-regressor" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-baseline-model-with-dummy-regressor">Step 2: Baseline Model with Dummy Regressor</h2>
 <p>We begin by training a Dummy Regressor, which predicts the mean of the target variable for all samples. This serves as a baseline to evaluate whether our Ridge Regression model improves prediction accuracy.</p>
-<div id="25d27f90" class="cell" data-execution_count="2">
+<div id="6b61c6ff" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyRegressor</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-3-train-a-ridge-regression-model" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-train-a-ridge-regression-model">Step 3: Train a Ridge Regression Model</h2>
 <p>Next, we train a Ridge Regression model and tune its hyperparameter, alpha using GridSearchCV. This ensures the model generalizes well to unseen data by evaluating multiple hyperparameter values through cross-validation.</p>
-<div id="57bb87ab" class="cell" data-execution_count="3">
+<div id="56ff64a5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -307,27 +307,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>When we visualize the coefficients of the Ridge Regression model, we how how each feature impacts the predicted grades in the Ridge Regression model. <code>studytime</code> has a positive impact, meaning more study time leads to better grades, while <code>failures</code> have the strongest negative effect, significantly lowering grades as past failures increase. <code>age</code> has a small negative influence, suggesting older students may slightly underperform compared to younger ones.</p>
-<div id="299e2880" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div id="70ba2359" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 
 <style>
-  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed {
+  #altair-viz-12362df57cfa45f999e5d882149a01fd.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed details,
-  #altair-viz-c525424e07554983b96aa359cdba0f41.vega-embed details summary {
+  #altair-viz-12362df57cfa45f999e5d882149a01fd.vega-embed details,
+  #altair-viz-12362df57cfa45f999e5d882149a01fd.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-c525424e07554983b96aa359cdba0f41"></div>
+<div id="altair-viz-12362df57cfa45f999e5d882149a01fd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c525424e07554983b96aa359cdba0f41") {
-      outputDiv = document.getElementById("altair-viz-c525424e07554983b96aa359cdba0f41");
+    if (outputDiv.id !== "altair-viz-12362df57cfa45f999e5d882149a01fd") {
+      outputDiv = document.getElementById("altair-viz-12362df57cfa45f999e5d882149a01fd");
     }
 
     const paths = {
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Root Mean Squared Error (RMSE)</strong>: On average, the model’s predictions are off by about 4.72 grade points.</p></li>
 <li><p><strong>Mean Absolute Error (MAE)</strong>: On average, the model’s predictions are off by 3.50 grade points, without emphasizing larger errors as much as MSE or RMSE.</p></li>
 </ul>
-<div id="5f90fe77" class="cell" data-execution_count="5">
+<div id="cad8d79b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_absolute_error</span>
