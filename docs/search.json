@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "blog-post.html",
     "href": "blog-post.html",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
@@ -18,62 +11,55 @@
     "href": "blog-post.html#ridge-regression",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "1. Ridge Regression",
-    "text": "1. Ridge Regression\nWhat it is: A method used to predict an outcome while avoiding overly complex models. Why it matters: It ensures the model does not overfit (memorize the data) but generalizes well to new data.\nExample: If you’re predicting student grades, Ridge Regression makes sure factors like “studytime” or “failures” do not dominate the model but work together for accurate predictions."
+    "text": "1. Ridge Regression\nRidge Regression is a method used to predict outcomes while preventing the model from becoming overly complicated. It works by adding a small penalty to the model’s coefficients, keeping them from becoming too large and ensuring the model stays balanced.\nThis method helps avoid overfitting (memorizing the data), where the model performs well on the training data but struggles with new, unseen data. By keeping the model simple, Ridge Regression ensures it makes reliable predictions in different situations.\nImagine you’re predicting student math grades. Without Ridge Regression, a factor like “studytime” might completely overshadow others like “failures” or “age,” making the model less reliable. Ridge Regression keeps all factors in check, ensuring they work together for better and more accurate predictions."
   },
   {
     "objectID": "blog-post.html#dummy-regressor",
     "href": "blog-post.html#dummy-regressor",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "2. Dummy Regressor",
-    "text": "2. Dummy Regressor\nWhat it is: A simple model that always predicts the average value of the outcome. Why it matters: It acts as a baseline to compare advanced models.\nExample: If the average math grade is 10.3, the Dummy Regressor will predict 10.3 for every student, no matter their study habits."
+    "text": "2. Dummy Regressor\nThe Dummy Regressor is a very simple model that predicts the average value of the target variable without analyzing any patterns in the data.\nIt provides a baseline for comparison. By starting with this simple approach, you can determine whether more advanced models are actually improving predictions or just adding unnecessary complexity.\nLet’s say the average math grade for a class is 10.3. A Dummy Regressor will predict 10.3 for every student, regardless of their age, past failures, or time spent studying. While it is not a “smart” model, it gives you a benchmark to evaluate the performance of more advanced methods."
   },
   {
     "objectID": "blog-post.html#standardscaler",
     "href": "blog-post.html#standardscaler",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "3. StandardScaler",
-    "text": "3. StandardScaler\nWhat it is: A tool to scale numerical features so they have similar ranges. Why it matters: Prevents features with larger values (like age) from dominating the model.\nExample: In the student dataset, “age” ranges from 15 to 22, while “studytime” ranges from 1 to 4. StandardScaler adjusts both to a similar scale."
+    "text": "3. StandardScaler\nStandardScaler is a tool that adjusts numerical features so they have a similar range, typically with a mean of 0 and a standard deviation of 1.\nIn machine learning, features with larger values can disproportionately influence the model’s predictions. StandardScaler ensures that all features are treated equally, preventing any single factor (like age) from dominating the results.\nImagine predicting student grades using “age” (which ranges from 15 to 22) and “studytime” (which ranges from 1 to 4). Without scaling, the model might give more importance to age simply because its values are larger. StandardScaler solves this by standardizing both features to the same scale, allowing the model to consider them fairly."
   },
   {
     "objectID": "blog-post.html#grid-search",
     "href": "blog-post.html#grid-search",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "4. Grid Search",
-    "text": "4. Grid Search\nWhat it is: A method to test different settings for your model to find the best one. Why it matters: Helps improve the accuracy of predictions.\nExample: In Ridge Regression, “alpha” is a setting that balances simplicity and accuracy. Grid Search tries out different alpha values to find the one that works best."
+    "text": "4. Grid Search\nGrid Search is a method used to systematically test different settings (called hyperparameters) for your model to find the combination that works best. It is like trying out various configurations to optimize the model’s performance.\nMachine learning models often rely on hyperparameters and choosing the right hyperparameters is crucial for improving the accuracy and reliability of predictions, and Grid Search helps automate this process.\nIn Ridge Regression, the hyperparameter controls the balance between simplicity and accuracy. Grid Search tests multiple values of this hyperparamter to see which one results in the best predictions. This ensures the model is tuned for optimal performance, saving time and effort compared to manual trial and error."
   },
   {
     "objectID": "blog-post.html#cross-validation",
     "href": "blog-post.html#cross-validation",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "5. Cross-Validation",
-    "text": "5. Cross-Validation\nWhat it is: A way to test a model on different parts of the data to ensure consistent results. Why it matters: It shows whether the model will perform well on new, unseen data.\nExample: Divide the student dataset into 5 parts. Use 4 parts for training and the last part for testing. Repeat this 5 times, testing a different part each time."
+    "text": "5. Cross-Validation\nCross-Validation is a method used to evaluate a model’s performance by testing it on different subsets of the data. It involves splitting the data into smaller parts, training the model on some parts, and testing it on the others.\nThis technique ensures that the model isn’t just performing well on the specific data it was trained on, but can also generalize to new, unseen data. It helps detect overfitting, where a model memorizes the training data but fails on other data.\nImagine dividing the student data into 5 equal parts. In the first round, train the model on 4 parts and test it on the 5th. In the second round, train on a different set of 4 parts and test on another. Repeat this process until every part has been tested once. By averaging the results, you get a more reliable measure of the model’s performance."
   },
   {
     "objectID": "blog-post.html#mean-square-error-mse",
     "href": "blog-post.html#mean-square-error-mse",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "6. Mean Square Error (MSE)",
-    "text": "6. Mean Square Error (MSE)\nThese are ways to measure how well a model predicts outcomes: - MSE (Mean Squared Error): The average of squared differences between predictions and actual values. - RMSE (Root Mean Squared Error): Like MSE but easier to interpret since it’s in the same units as the outcome. - MAE (Mean Absolute Error): The average of the absolute differences between predictions and actual values.\nExample: If the model predicts a grade of 15 and the actual grade is 10: - MSE = ((15 - 10)^2 = 25) - RMSE = ( = 5) - MAE = (|15 - 10| = 5)"
+    "text": "6. Mean Square Error (MSE)\nThe Mean Squared Error (MSE) is a common metric used to evaluate how well a model predicts outcomes. It works by calculating the average of the squared differences between the predicted values and the actual values. By squaring these differences, the MSE gives more weight to larger errors, ensuring significant mistakes have a bigger impact on the overall score.\nIn simple terms, the MSE tells us how far off our predictions are, on average. A smaller MSE indicates better accuracy, meaning the model’s predictions are closer to the actual values. This makes MSE a reliable way to measure the performance of predictive models."
   },
   {
     "objectID": "blog-post.html#root-mean-square-error-rmse",
     "href": "blog-post.html#root-mean-square-error-rmse",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "7. Root Mean Square Error (RMSE)",
-    "text": "7. Root Mean Square Error (RMSE)"
+    "text": "7. Root Mean Square Error (RMSE)\nThe Root Mean Squared Error (RMSE) is derived by taking the square root of the Mean Squared Error (MSE). This transformation converts the error from squared units back to the original scale of the outcome, making it easier to understand and interpret.\nRMSE represents the average difference between the predicted and actual values, expressed in the same units as the outcome. For example, if RMSE is 4.0, it means that, on average, the model’s predictions are off by 4.0 points. This makes RMSE an intuitive and practical way to assess the accuracy of predictions."
   },
   {
     "objectID": "blog-post.html#mean-absolute-error-mae",
     "href": "blog-post.html#mean-absolute-error-mae",
     "title": "Predicting Grades and Simplifying Machine Learning Concepts",
     "section": "8. Mean Absolute Error (MAE)",
-    "text": "8. Mean Absolute Error (MAE)"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
+    "text": "8. Mean Absolute Error (MAE)\nThe Mean Absolute Error (MAE) is a metric that calculates the average of the absolute differences between the predicted and actual values. Unlike the Mean Squared Error, MAE does not square the differences, making it a simpler and more direct measure of prediction accuracy.\nMAE provides a clear interpretation of how far off, on average, the predictions are from the actual values. For example, an MAE of 3.0 means the model’s predictions differ from the actual outcomes by 3.0 points on average. The MAE a straightforward way assess a model’s performance."
   }
 ]
